@@ -89,7 +89,7 @@ var mergeTranslations = function (results, lang, options) {
     var _translation = new Translations({
         "safeMode": options.safeMode,
         "tree": false,
-        "nullEmpty": false
+        "nullEmpty": options.nullEmpty
       }, results),
       destFileName = options.dest + '/' + lang + '.json',
       isDefaultLang = (options.defaultLang === lang),
@@ -123,7 +123,8 @@ function extract(options) {
     lang: ['en-US', 'ru-RU'],
     dest: '.',
     safeMode: false,
-    stringifyOptions: false
+    stringifyOptions: false,
+    nullEmpty: false
   }, options);
 
   var results = {}, firstFile, 
